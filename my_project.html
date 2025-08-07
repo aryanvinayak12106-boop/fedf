@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Event Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      float: left;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+    }
+
+    /* Container */
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .confirmation {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <div class="container" id="details">
+    <h2>Event: Tech Day 2025</h2>
+    <p><strong>Date:</strong> October 15, 2025</p>
+    <p><strong>Venue:</strong> IMB Hall, HYDERABA  </p>
+    <p>Join us for exciting tech talks, networking, and workshops with top industry experts!</p>
+  </div>
+
+  <div class="container" id="register">
+    <h2>Registration Form</h2>
+    <form onsubmit="showConfirmation(event)">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" required>
+
+      <label for="role">Your Role:</label>
+      <select id="role" required>
+        <option value="">Select</option>
+        <option value="student">Student</option>
+        <option value="developer">Developer</option>
+        <option value="guest">Guest</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="confirmation" id="confirmation">
+      ✅ Thank you! Your registration has been received.
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Tech Day. All rights reserved.
+  </footer>
+
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault(); // Prevent form from refreshing page
+      document.getElementById("confirmation").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
